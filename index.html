@@ -1,87 +1,197 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <body>
-     <meta charset="UTF-8"/>
-     <meta name="author" content="Daniele" />
-     <meta name="description" content="aerolinea" />
-     <meta name="keyword" content="vuelos baratos"/>
-     <meta http-equiv="content-type" content="text/html" />
-     <meta http-equiv="content-language" content="es-es" />
-     <link rel="stylesheet" type="text/css" href="AEGA.css" />
-     <link rel="shortcut icon" type="image/x-icon" href="imagenes/AVION.ico" />
-     <style type="text/css">
-      body{
-             margin-left 40px;
-             margin-top  40px;
-             color: blue;
-             border: 1px solid;
-             }
-             </style>
-     </head>
-     <body>
-    <title>AESA</title>
+    <meta http-equiv="Content-Type" content="text/html;">
+    <meta charset="UTF-8">
+    <meta name="author" content="Daniele">
+    <meta name="description" content="Aerolínea AESA - Vuelos baratos">
+    <meta name="keywords" content="vuelos baratos, aerolinea, viajar">
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/AVION.ico" />
+    <title>AESA - Tus vuelos al mejor precio</title>
+    
     <style>
-        header { background-color:blue;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        #header {
+            background-color: #003366; 
             color: white;
             padding: 20px;
             text-align: center;
+            border-bottom: 5px solid #cc0000; 
         }
-        nav {
-            background-color: brown ;
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 5px;
+        }
+
+        #nav {
+            background-color: #cc0000; 
             padding: 10px;
+            text-align: center;
         }
-        nav abbr {
+
+        #nav a {
             color: white;
             text-decoration: none;
-            margin: 15px;
             font-weight: bold;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid #aa0000;
+            background-color: #990000;
         }
-        footer {
-            background-color:rgb(228, 228, 233);
-            color: rgb(4, 18, 153);
-            text-align: center;
+
+        #nav a:hover {
+            background-color: white;
+            color: #cc0000;
+        }
+
+        #contenido {
+            width: 800px;
+            margin: 20px auto; 
+            background-color: white;
+            border: 1px solid #ccc;
             padding: 20px;
-            margin-top: 40px;
+        }
+
+        #buscador {
+            background-color: #e6f2ff;
+            border: 1px solid #b3d9ff;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #oferta-especial {
+            border: 2px solid #003366;
+            background-color: #ffffe0;
+            padding: 15px;
+            overflow: hidden; 
+        }
+
+        #oferta-especial img {
+            float: left; 
+            margin-right: 15px;
+            border: 1px solid #000;
+            width: 200px; 
+        }
+
+        #oferta-especial h2 {
+            color: #cc0000;
+            margin-top: 0;
+        }
+
+        #footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: small;
+            margin-top: 20px;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1> ✈ AESA</h1>
+
+    <div id="header">
+        <h1>✈ AESA</h1>
         <p>Tus vuelos al mejor precio</p>
-    </header>
-    <nav>
+    </div>
+
+    <div id="nav">
         <a href="#inicio">Inicio</a>
         <a href="#vuelos">Vuelos</a>
         <a href="#destinos">Destinos</a>
-		<a href="#Promociones">Promociones</a>
+        <a href="#promociones">Ofertas</a>
         <a href="#contacto">Contacto</a>
-        <form method="get" id="search-form">
-            <input type="text" id="search-input" placeholder="Buscar...">
-            <button type="submit" value="Buscar">Buscar vuelos</button>
-          </form>
-    </nav>
-    
-</body>
-<head>
-    <title>Posicionamiento flotante</title>
-    <style>
-        #principal {  border: 2px solid; width: 400px;  font-size: large; }
-        img {  float: left;  }
-        p { margin: 5px;   }
-    </style>
-</head>
-<body>
-    <h1>Posicionamiento flotante</h1> 
-    <div id="principal">
-        <img src="avito.jpg.jpg" alt="Imagen de avion">
-        <p>
-            En el posicionamiento flotante, el texto fluye alrededor de  las imágenes hasta que se acabe el texto o aparezca la  propiedad clear. En el posicionamiento flotante, el texto  fluye alrededor de las imágenes hasta que se acabe el texto o    aparezca la propiedad clear.
-        </p>
     </div>
+
+    <div id="contenido">
+
+        <div id="buscador">
+            <h2>Busca tu próximo destino</h2>
+            <form action="buscar_vuelo.php" method="get">
+                <p>
+                    Origen: 
+                    <select name="origen">
+                        <option>Madrid</option>
+                        <option>Barcelona</option>
+                        <option>Mallorca</option>
+                    </select>
+                    
+                    Destino: 
+                    <select name="destino">
+                        <option>París</option>
+                        <option>Londres</option>
+                        <option>Roma</option>
+                        <option>Tesalonica</option>
+                        <option>Leeds</option>
+                        <option>Florencia</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="checkbox" name="ida" > Ida
+                    <input type="checkbox" name="ida_vuelta" checked> Ida y vuelta
+                    <input type="submit" value="BUSCAR VUELOS">
+                </p>
+            </form>
+        </div>
+
+        <hr>
+
+        <div id="oferta-especial">
+            <h2>¡Promoción!</h2>
+            <img src="AVI.jpg.jpg" alt="Avión de AESA volando">
+            <p>
+                <b>Descubre nuestras nuevas rutas.</b> Aprovecha nuestras ofertas exclusivas para volar a destinos paradisíacos. 
+            </p>
+            <p>
+                Nuestros aviones cuentan con la última tecnología y el máximo confort. Reserva ahora y obtén un 20% de descuento en tu primera compra. ¡No dejes pasar esta oportunidad de volar con AESA!
+            </p>
+            <br > 
+        </div>
+
+        <br>
+
+        <h3>Vuelos mas Populares desde Madrid</h3>
+        <table border="1" width="100%" cellpadding="5" cellspacing="0" bordercolor="blue">
+            <tr  style="color: white;">
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Londres (LHR)</td>
+                <td>18 Octubre</td>
+                <td>45€</td>
+            </tr>
+            <tr>
+                <td>Nueva York (JFK)</td>
+                <td>11 septiembre</td>
+                <td>50€</td>
+            </tr>
+            <tr>
+                <td>París (CDG)</td>
+                <td>20 Noviembre</td>
+                <td>60€</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="footer">
+        <p> 2025 AESA Aerolíneas. Todos los derechos reservados.</p>
+        <p>Themistokli Sofouli 75, Thessaloniki 551 31, </p>
+    </div>
+
 </body>
-
-
-		 
 </html>
 
